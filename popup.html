@@ -1,0 +1,133 @@
+<!-- Web Developer Toolkit Popup -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Developer Toolkit</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Web Dev Toolkit</h1>
+        </header>
+        
+        <nav class="nav-tabs">
+            <button class="tab-btn active" data-tab="inspector">Inspector</button>
+            <button class="tab-btn" data-tab="color">Color</button>
+            <button class="tab-btn" data-tab="responsive">Responsive</button>
+            <button class="tab-btn" data-tab="assets">Assets</button>
+            <button class="tab-btn" data-tab="stack">Stack</button>
+            <button class="tab-btn" data-tab="seo">SEO</button>
+            <button class="tab-btn" data-tab="capture">Capture</button>
+            <button class="tab-btn" data-tab="debug">Debug</button>
+        </nav>
+
+        <main class="content">
+            <!-- Inspector Tab -->
+            <div class="tab-content active" id="inspector">
+                <h3>HTML/CSS Inspector</h3>
+                <button id="toggleInspector" class="action-btn">Toggle Inspector</button>
+                <div class="feature-list">
+                    <label class="checkbox-item">
+                        <input type="checkbox" id="showPseudo" checked>
+                        <span>Show Pseudo Classes</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" id="showMediaQueries" checked>
+                        <span>Show Media Queries</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" id="enableLiveEdit" checked>
+                        <span>Enable Live Editing</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Color Tab -->
+            <div class="tab-content" id="color">
+                <h3>Color Eyedropper</h3>
+                <button id="activateColorPicker" class="action-btn">Activate Color Picker</button>
+                <div class="color-history">
+                    <h4>Recent Colors</h4>
+                    <div id="colorHistory" class="color-swatches"></div>
+                </div>
+            </div>
+
+            <!-- Responsive Tab -->
+            <div class="tab-content" id="responsive">
+                <h3>Responsive Viewer</h3>
+                <!-- New buttons for specific views -->
+                <button id="openMobileView" class="action-btn">Mobile View (375x667)</button>
+                <button id="openDesktopView" class="action-btn">Desktop View (1440x900)</button>
+                <button id="openResponsiveViewer" class="action-btn">Open Both Views</button>
+                <!-- Removed: device-presets section -->
+            </div>
+
+            <!-- Assets Tab -->
+            <div class="tab-content" id="assets">
+                <h3>Asset Extractor</h3>
+                <button id="extractAssets" class="action-btn">Extract Page Assets</button>
+                <div class="asset-filters">
+                    <label class="checkbox-item">
+                        <input type="checkbox" id="includeImages" checked>
+                        <span>Images</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" id="includeVideos" checked>
+                        <span>Videos</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" id="includeSvgs" checked>
+                        <span>SVGs</span>
+                    </label>
+                </div>
+                <div id="assetList" class="asset-list"></div>
+            </div>
+
+            <!-- Stack Tab -->
+            <div class="tab-content" id="stack">
+                <h3>Tech Stack Detection</h3>
+                <button id="analyzeStack" class="action-btn">Analyze Tech Stack</button>
+                <div id="stackResults" class="stack-results"></div>
+            </div>
+
+            <!-- SEO Tab -->
+            <div class="tab-content" id="seo">
+                <h3>SEO Analyzer</h3>
+                <button id="analyzeSEO" class="action-btn">Analyze SEO</button>
+                <div id="seoResults" class="seo-results"></div>
+            </div>
+
+            <!-- Capture Tab -->
+            <div class="tab-content" id="capture">
+                <h3>Screenshot Tools</h3>
+                <button id="captureVisible" class="action-btn">Capture Visible Area</button>
+                <div class="format-options">
+                    <h4>Export Format</h4>
+                    <select id="exportFormat">
+                        <option value="png">PNG</option>
+                        <option value="jpeg">JPEG</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Debug Tab -->
+            <div class="tab-content" id="debug">
+                <h3>Debug Tools</h3>
+                <button id="clearCache" class="action-btn">Clear Cache</button>
+            </div>
+        </main>
+    </div>
+    <script src="popup-tools/inspectorPopup.js"></script>
+    <script src="popup-tools/colorPopup.js"></script>
+    <script src="popup-tools/responsivePopup.js"></script>
+    <script src="popup-tools/assetsPopup.js"></script>
+    <script src="popup-tools/stackPopup.js"></script>
+    <script src="popup-tools/seoPopup.js"></script>
+    <script src="popup-tools/capturePopup.js"></script>
+    <script src="popup-tools/debugPopup.js"></script>
+    <script src="popup.js"></script>
+</body>
+</html>
