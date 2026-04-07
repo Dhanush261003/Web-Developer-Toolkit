@@ -1,0 +1,409 @@
+/* Popup styles for the web developer toolkit */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 400px;
+    height: 600px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    background: #1e1e1e;
+    color: #e0e0e0;
+    overflow: hidden;
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: #1e1e1e;
+}
+
+.header {
+    background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+    color: #ffffff;
+    padding: 14px 16px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.header h1 {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+.nav-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    background: #252526;
+    border-bottom: 1px solid #3e3e42;
+    overflow-x: auto;
+}
+
+.tab-btn {
+    flex: 1;
+    min-width: 60px;
+    padding: 10px 8px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 11px;
+    color: #858585;
+    font-weight: 500;
+    transition: all 0.15s;
+    border-bottom: 2px solid transparent;
+    position: relative;
+}
+
+.tab-btn:hover {
+    background: #2d2d30;
+    color: #cccccc;
+}
+
+.tab-btn.active {
+    color: #3b82f6;
+    border-bottom-color: #3b82f6;
+    background: #1e1e1e;
+}
+
+.content {
+    flex: 1;
+    padding: 12px 14px;
+    overflow-y: auto;
+    background: #1e1e1e;
+}
+
+.tab-content {
+    display: none;
+    overflow-y: auto;
+    max-height: 500px;
+    -webkit-overflow-scrolling: touch;
+}
+
+.tab-content.active {
+    display: block;
+    overflow-y: auto;
+    max-height: 500px;
+    -webkit-overflow-scrolling: touch;
+}
+
+.tab-content h3 {
+    margin-bottom: 12px;
+    color: #e0e0e0;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.action-btn {
+    width: 100%;
+    padding: 10px 12px;
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    transition: all 0.15s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.action-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+}
+
+.action-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.feature-list {
+    background: #252526;
+    border-radius: 4px;
+    padding: 10px;
+    border: 1px solid #3e3e42;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    padding: 6px 0;
+    cursor: pointer;
+    font-size: 12px;
+    color: #cccccc;
+}
+
+.checkbox-item input {
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+.color-history {
+    background: #252526;
+    border-radius: 4px;
+    padding: 10px;
+    border: 1px solid #3e3e42;
+}
+
+.color-history h4 {
+    margin-bottom: 8px;
+    font-size: 11px;
+    color: #858585;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.color-swatches {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.color-swatch {
+    width: 24px;
+    height: 24px;
+    border-radius: 3px;
+    border: 1px solid #3e3e42;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.15s;
+}
+
+.color-swatch:hover {
+    transform: scale(1.1);
+    border-color: #3b82f6;
+    box-shadow: 0 0 6px rgba(59, 130, 246, 0.3);
+}
+
+.color-swatch:hover::after {
+    content: attr(data-color);
+    position: absolute;
+    bottom: -22px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333333;
+    color: #e0e0e0;
+    padding: 4px 8px;
+    border-radius: 3px;
+    font-size: 10px;
+    white-space: nowrap;
+    z-index: 10;
+    border: 1px solid #3e3e42;
+}
+
+.device-presets {
+    background: #252526;
+    border-radius: 4px;
+    padding: 10px;
+    border: 1px solid #3e3e42;
+}
+
+.device-presets h4 {
+    margin-bottom: 8px;
+    font-size: 11px;
+    color: #858585;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.preset-btn {
+    display: block;
+    width: 100%;
+    padding: 8px 10px;
+    margin-bottom: 6px;
+    background: #2d2d30;
+    border: 1px solid #3e3e42;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px;
+    text-align: left;
+    transition: all 0.15s;
+    color: #cccccc;
+}
+
+.preset-btn:hover {
+    background: #3e3e42;
+    border-color: #3b82f6;
+    color: #e0e0e0;
+}
+
+.asset-filters {
+    background: #252526;
+    border-radius: 4px;
+    padding: 10px;
+    border: 1px solid #3e3e42;
+    margin-bottom: 10px;
+}
+
+.asset-list {
+    background: #252526;
+    border-radius: 4px;
+    padding: 10px;
+    border: 1px solid #3e3e42;
+    max-height: 200px;
+    overflow-y: auto;
+    font-size: 11px;
+}
+
+.stack-results, .seo-results {
+    background: #252526;
+    border-radius: 4px;
+    padding: 10px;
+    border: 1px solid #3e3e42;
+    max-height: 300px;
+    overflow-y: auto;
+    font-size: 11px;
+}
+
+.format-options {
+    background: #252526;
+    border-radius: 4px;
+    padding: 10px;
+    border: 1px solid #3e3e42;
+}
+
+.format-options h4 {
+    margin-bottom: 8px;
+    font-size: 11px;
+    color: #858585;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.format-options select {
+    width: 100%;
+    padding: 6px 8px;
+    border: 1px solid #3e3e42;
+    border-radius: 3px;
+    font-size: 12px;
+    background: #2d2d30;
+    color: #cccccc;
+}
+
+/* Inspector editor containers - ensure scrolling works */
+#liveCSSEditor {
+    pointer-events: auto;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-height: 400px;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    will-change: scroll-position;
+}
+
+#selectedEditor {
+    pointer-events: auto;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-height: 350px;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    will-change: scroll-position;
+}
+
+#consolePanel {
+    pointer-events: auto;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-height: 400px;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    will-change: scroll-position;
+}
+
+#selectedEditorContent {
+    pointer-events: auto;
+}
+
+/* Ensure all inputs and interactive elements inside panels are clickable */
+.inspector-edit, .inspector-edit input, .inspector-edit select {
+    pointer-events: auto;
+}
+
+input[type="text"], input[type="color"], select {
+    pointer-events: auto;
+    /* Ensure inputs don't block scroll events on parent */
+    box-sizing: border-box;
+}
+
+button {
+    pointer-events: auto;
+}
+
+/* Container styles for better scroll handling */
+div[role="tabpanel"] {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1e1e1e;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #424245;
+    border-radius: 6px;
+    min-height: 40px;
+    cursor: grab;
+}
+
+::-webkit-scrollbar-thumb:active {
+    cursor: grabbing;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #4e4e52;
+    cursor: grab;
+}
+
+/* Firefox scrollbar styling */
+* {
+    scrollbar-color: #424245 #1e1e1e;
+    scrollbar-width: thin;
+}
+
+/* Media query preview (collapsed) */
+.dev-toolkit-mq-preview {
+    max-height: 4.2em !important; /* roughly 3 lines */
+    overflow: hidden !important;
+    white-space: pre-wrap !important;
+    font-size: 11px !important;
+    color: #9fbfe8 !important;
+    margin: 4px 0 !important;
+}
+.dev-toolkit-mq {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 6px !important;
+}
+.dev-toolkit-mq.expanded .dev-toolkit-mq-preview {
+    max-height: none !important;
+}
+.dev-toolkit-mq-toggle {
+    background: transparent !important;
+    border: 1px solid rgba(255,255,255,0.08) !important;
+    color: #cfe9ff !important;
+    padding: 4px 8px !important;
+    border-radius: 4px !important;
+    cursor: pointer !important;
+    font-size: 11px !important;
+    align-self: flex-start !important;
+}
+
+/* End of popup styles */
+
+
